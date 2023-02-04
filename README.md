@@ -17,4 +17,5 @@ PATCH_SIZE = 4
 patch_num  = 1000000
 STRIDE     = 2
 k          = 256
+num_iter   = 100
 ```
