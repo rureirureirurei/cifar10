@@ -15,6 +15,5 @@ Here's a table with some results I got!
 ```PATCH_SIZE = 4
 patch_num  = 1000000
 STRIDE     = 2
-kroot      = 20
 k          = 256
 ```
