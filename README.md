@@ -12,7 +12,8 @@ Here's a table with some results I got!
 
 
 * More features (1)
-```PATCH_SIZE = 4
+```
+PATCH_SIZE = 4
 patch_num  = 1000000
 STRIDE     = 2
 k          = 256
