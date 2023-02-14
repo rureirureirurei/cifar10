@@ -8,6 +8,7 @@ Here's a table with some results I got!
 | default | 0.4535 |
 | (1) | 0.5168|
 | (2) | 0.4856|
+| (3) | 0.4856|
 
 
 
@@ -15,16 +16,30 @@ Here's a table with some results I got!
 * More features (1)
 ```
 PATCH_SIZE = 4
-patch_num  = 1000000
+PATCH_NUM  = 1000000
 STRIDE     = 2
-k          = 256
-num_iter   = 100
+K          = 256
 ```
 
 * Slightly more features (2)
 ```
 PATCH_SIZE = 6
-patch_num  = 100000
+PATCH_NUM  = 100000
 STRIDE     = 8
-k          = 64
+K          = 64
+```
+* Simple neural network (3)
+```
+PATCH_SIZE = 4
+PATCH_NUM  = 1000000
+STRIDE     = 2
+K          = 64
+
+Neural network achitecture:
+
+dense 1024 -> dense 512 -> dense 10
+
+activation: relu
+loss:       categorical_crossentropy
+optimizer:  adam
 ```
