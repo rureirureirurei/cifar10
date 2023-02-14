@@ -40,7 +40,6 @@ Neural network achitecture:
 dense 1024 -> dense 512 -> dense 10
 
 activation: relu
-loss: categorical_crossentropy
-optimizer: adam
-
+loss:       categorical_crossentropy
+optimizer:  adam
 ```
