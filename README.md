@@ -14,7 +14,7 @@ Here's a table with some results I got!
 
 
 
-* More features (1)
+* More features logreg (1)
 ```
 PATCH_SIZE = 4
 PATCH_NUM  = 1000000
@@ -22,7 +22,7 @@ STRIDE     = 2
 K          = 256
 ```
 
-* Slightly more features (2)
+* Slightly more features logreg (2)
 ```
 PATCH_SIZE = 6
 PATCH_NUM  = 100000
