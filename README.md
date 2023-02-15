@@ -1,7 +1,10 @@
 # cifar10 🤪
-Solving cifar10! 
+Solving cifar10 using k-means extracted patched features.
 
-Here's a table with some results I got!
+Based on [this paper](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)
+and [this notebook](https://github.com/marekpiotradamczyk/ml_uwr_22/blob/main/kmeans_deep_features.ipynb)
+
+Table with results
 
 | Model | Accuracy |
 |------|----------|
@@ -44,7 +47,7 @@ activation: relu
 loss:       categorical_crossentropy
 optimizer:  adam
 ```
-* Simple neural network (4)
+* A bit tuned neural network (4)
 ```
 PATCH_SIZE = 12
 PATCH_NUM  = 1000000
