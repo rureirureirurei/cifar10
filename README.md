@@ -14,7 +14,8 @@ Table with results
 | (3) Neural network | 0.4856|
 | (4) Neural network | 0.5625|
 | (5) XGBoost | 0.5464|
-| (6) Random forest | 0.4789|
+| (6) XGBoost NO FEATURES | 0.5381|
+| (7) Random forest | 0.4789|
 
 
 
@@ -75,7 +76,12 @@ K          = 32
 max depth  : 15
 estimators : 60
 ```
-* Random Forest (6)
+* XGBoost (6)
+```
+max depth  : 6
+estimators : 100
+```
+* Random Forest (7)
 ```
 PATCH_SIZE = 7
 PATCH_NUM  = 2000000
