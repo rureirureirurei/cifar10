@@ -14,6 +14,7 @@ from os.path import join
 import os.path
 from PIL import Image
 
+
 from sklearn.cluster import KMeans, MiniBatchKMeans
 import numpy as np
 
@@ -31,11 +32,16 @@ class FeaturesExtractor():
         self.K = K
         self.centroids = []
         
+	# return number of elements corresponding to each centroid
     def fit(self, X):
+        print("Started fitting extractor:")
         P_zca = self.extract_patches(X)
-        kmeans = MiniBatchKMeans(n_clusters=self.K, random_state=0, verbose=False, n_init=1, max_iter=200, batch_size=10000)
+        kmeans = MiniBatchKMeans(n_clusters=self.K, random_state=0, verbose=False, max_iter=200, batch_size=10000, n_init=10)
         kmeans.fit(P_zca)
         self.centroids = kmeans.cluster_centers_
+        labels = kmeans.labels_
+        counts = np.bincount(labels, minlength=kmeans.n_clusters)
+        return counts
     
     def contrast(self, image):
         return (image-image.min())/(image.max() - image.min())
@@ -55,7 +61,7 @@ class FeaturesExtractor():
         patches = []
         reshaped = data.reshape(-1,32,32,3)
         n = int(self.PATCH_NUM / (32-self.PATCH_SIZE+1) ** 2 + 1)
-        for i in range(n):
+        for i in tqdm(range(n)):
             for r in range(32-self.PATCH_SIZE+1):
                 for c in range(32-self.PATCH_SIZE+1):
                     patch = reshaped[i][c:(c+self.PATCH_SIZE),r:(r+self.PATCH_SIZE)].flatten()
@@ -74,7 +80,7 @@ class FeaturesExtractor():
 
     def create_patch_features__vectorized(self, X):    
         X_mapped_list_per_image = []
-        for i in range(X.shape[0]):
+        for i in tqdm(range(X.shape[0])):
             patches = image.extract_patches_2d(X[i], (self.PATCH_SIZE, self.PATCH_SIZE))
             strided_patches = patches.reshape( 32-self.PATCH_SIZE+1 , 32-self.PATCH_SIZE+1, self.PATCH_SIZE, self.PATCH_SIZE, 3)[::self.STRIDE,::self.STRIDE,:,:,:]
             strided_patches = strided_patches.reshape(((32-self.PATCH_SIZE)//self.STRIDE+1)**2, self.PATCH_SIZE * self.PATCH_SIZE * 3)
@@ -84,6 +90,7 @@ class FeaturesExtractor():
         return X_mapped
     
     def extract(self, X):
+        print("Started extracting")
         mapped = self.create_patch_features__vectorized(X)
         norm = self.normalize(mapped)
         return norm
