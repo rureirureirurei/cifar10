@@ -13,6 +13,7 @@ Table with results
 | (2) | 0.4856|
 | (3) | 0.4856|
 | (4) | 0.5625|
+| (5) | 0.5464|
 
 
 
@@ -62,4 +63,9 @@ dropout:    0.2
 activation: relu
 loss:       categorical_crossentropy
 optimizer:  adam
+```
+* XGBoost (5)
+```
+max depth:  15
+estimators: 60
 ```
