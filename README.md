@@ -66,6 +66,10 @@ optimizer:  adam
 ```
 * XGBoost (5)
 ```
+PATCH_SIZE = 8
+PATCH_NUM  = 1000000
+STRIDE     = 6
+K          = 32
 max depth:  15
 estimators: 60
 ```
