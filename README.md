@@ -9,11 +9,12 @@ Table with results
 | Model | Accuracy |
 |------|----------|
 | default | 0.4535 |
-| (1) | 0.5168|
-| (2) | 0.4856|
-| (3) | 0.4856|
-| (4) | 0.5625|
-| (5) | 0.5464|
+| (1) Logistic regression | 0.5168|
+| (2) Logistic regression| 0.4856|
+| (3) Neural network | 0.4856|
+| (4) Neural network | 0.5625|
+| (5) XGBoost | 0.5464|
+| (6) Random forest | 0.4789|
 
 
 
@@ -44,9 +45,9 @@ Neural network achitecture:
 
 dense 1024 -> dense 512 -> dense 10
 
-activation: relu
-loss:       categorical_crossentropy
-optimizer:  adam
+activation : relu
+loss       : categorical_crossentropy
+optimizer  : adam
 ```
 * A bit tuned neural network (4)
 ```
@@ -59,10 +60,10 @@ Neural network achitecture:
 
 dense 1024 -> dense 1024 -> dense 1024 -> dense 10
 
-dropout:    0.2
-activation: relu
-loss:       categorical_crossentropy
-optimizer:  adam
+dropout    : 0.2
+activation : relu
+loss       : categorical_crossentropy
+optimizer  : adam
 ```
 * XGBoost (5)
 ```
@@ -70,6 +71,16 @@ PATCH_SIZE = 8
 PATCH_NUM  = 1000000
 STRIDE     = 6
 K          = 32
-max depth:  15
-estimators: 60
+
+max depth  : 15
+estimators : 60
+```
+* Random Forest (6)
+```
+PATCH_SIZE = 7
+PATCH_NUM  = 2000000
+STRIDE     = 5
+K          = 256
+
+default
 ```
