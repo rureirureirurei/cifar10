@@ -9,6 +9,7 @@ Here's a table with some results I got!
 | (1) | 0.5168|
 | (2) | 0.4856|
 | (3) | 0.4856|
+| (4) | 0.5443|
 
 
 
@@ -39,6 +40,22 @@ Neural network achitecture:
 
 dense 1024 -> dense 512 -> dense 10
 
+activation: relu
+loss:       categorical_crossentropy
+optimizer:  adam
+```
+* Simple neural network (4)
+```
+PATCH_SIZE = 12
+PATCH_NUM  = 1000000
+STRIDE     = 6
+K          = 256
+
+Neural network achitecture:
+
+dense 1024 -> dense 1024 -> dense 1024 -> dense 10
+
+dropout:    0.2
 activation: relu
 loss:       categorical_crossentropy
 optimizer:  adam
