@@ -13,9 +13,12 @@ Table with results
 | (2) Logistic regression| 0.4856|
 | (3) Neural network | 0.4856|
 | (4) Neural network | 0.5625|
-| (5) XGBoost | 0.5464|
-| (6) XGBoost NO FEATURES | 0.5381|
-| (7) Random forest | 0.4789|
+| (5) Random forest | 0.4789|
+| (6) XGBoost | 0.5464|
+| (7) XGBoost NO FEATURES | 0.5381|
+| (9) XGBoost | 0.5843|
+
+0.5843
 
 
 
@@ -66,7 +69,16 @@ activation : relu
 loss       : categorical_crossentropy
 optimizer  : adam
 ```
-* XGBoost (5)
+* Random Forest (5)
+```
+PATCH_SIZE = 7
+PATCH_NUM  = 2000000
+STRIDE     = 5
+K          = 256
+
+default
+```
+* XGBoost (6)
 ```
 PATCH_SIZE = 8
 PATCH_NUM  = 1000000
@@ -76,17 +88,18 @@ K          = 32
 max depth  : 15
 estimators : 60
 ```
-* XGBoost (6)
+* XGBoost (7)
 ```
 max depth  : 6
 estimators : 100
 ```
-* Random Forest (7)
+* XGBoost (8)
 ```
-PATCH_SIZE = 7
+PATCH_SIZE = 12
 PATCH_NUM  = 2000000
-STRIDE     = 5
-K          = 256
+STRIDE     = 6
+K          = 64
 
-default
+max depth  : 10
+estimators : 100
 ```
