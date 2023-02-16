@@ -24,6 +24,8 @@ Table with results
 Some insights I got when experimenting:
 1) Optimal PATCH_NUM is approximately 30000. (Tested with k = 64)
 2) The optimal value of K is approximately 72. (Increasing K did not result in a decrease in accuracy, but significantly increased the training time required)
+3) STRIDE 2 is the best
+4) Increasing XGBoost depth can improve accuracy although training takes ungodly amounts of time
 
 
 
