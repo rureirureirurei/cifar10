@@ -22,7 +22,8 @@ Table with results
 
 
 Some insights I got when experimenting:
-1) Optimal PATCH_NUM is about 3000000. (Tested with k = 64)
+1) Optimal PATCH_NUM is approximately 30000. (Tested with k = 64)
+2) The optimal value of K is approximately 72. (Increasing K did not result in a decrease in accuracy, but significantly increased the training time required)
 
 
 
