@@ -1,5 +1,5 @@
 # cifar10 🤪
-Solving cifar10 using k-means extracted patched features.
+Solving cifar10 without using CNN.
 
 Based on [this paper](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)
 and [this notebook](https://github.com/marekpiotradamczyk/ml_uwr_22/blob/main/kmeans_deep_features.ipynb)
@@ -16,13 +16,20 @@ Table with results
 | (5) Random forest | 0.4789|
 | (6) XGBoost | 0.5464|
 | (7) XGBoost NO FEATURES | 0.5381|
-| (9) XGBoost | 0.5843|
+| (8) XGBoost 220 | 0.6252|
 
-0.5843
-
-
+0.6252
 
 
+Some insights I got when experimenting:
+1) Optimal PATCH_NUM is approximately 30000. (Tested with k = 64)
+2) The optimal value of K is approximately 72. (Increasing K did not result in a decrease in accuracy, but significantly increased the training time required)
+3) STRIDE 2 is the best
+4) Increasing XGBoost depth can improve accuracy although training takes ungodly amounts of time
+
+
+
+Explanations for the results table:
 * More features logreg (1)
 ```
 PATCH_SIZE = 4
@@ -95,11 +102,11 @@ estimators : 100
 ```
 * XGBoost (8)
 ```
-PATCH_SIZE = 12
-PATCH_NUM  = 2000000
-STRIDE     = 6
-K          = 64
+PATCH_SIZE = 10
+PATCH_NUM  = 4000000
+STRIDE     = 5
+K          = 128
 
 max depth  : 10
-estimators : 100
+estimators : 220
 ```
