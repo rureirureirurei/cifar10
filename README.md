@@ -21,8 +21,12 @@ Table with results
 0.6252
 
 
+Some insights I got when experimenting:
+1) Optimal PATCH_NUM is about 3000000. (Tested with k = 64)
 
 
+
+Explanations for the results table:
 * More features logreg (1)
 ```
 PATCH_SIZE = 4
