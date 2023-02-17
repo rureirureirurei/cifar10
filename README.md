@@ -4,6 +4,10 @@ Solving cifar10 without using CNN.
 Based on [this paper](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)
 and [this notebook](https://github.com/marekpiotradamczyk/ml_uwr_22/blob/main/kmeans_deep_features.ipynb)
 
+Main notebook is nn.ipynb.
+
+Right now it's a real mess, I might tidy things up later.
+
 Table with results
 
 | Model | Accuracy |
