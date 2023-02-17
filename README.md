@@ -1,4 +1,4 @@
-# cifar10 🤪
+# cifar10 😔
 Solving cifar10 without using CNN.
 
 Based on [this paper](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)
