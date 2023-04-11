@@ -1,5 +1,5 @@
 # cifar10 😔
-Solving cifar10 without using CNN.
+Solving CIFAR10 without using CNN.
 
 Based on [this paper](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)
 and [this notebook](https://github.com/marekpiotradamczyk/ml_uwr_22/blob/main/kmeans_deep_features.ipynb)
@@ -22,7 +22,7 @@ Table with results
 | (7) XGBoost NO FEATURES | 0.5381|
 | (8) XGBoost 220 | 0.6252|
 
-0.6252
+Best accuracy: 0.6252
 
 
 Some insights I got when experimenting:
@@ -30,7 +30,6 @@ Some insights I got when experimenting:
 2) The optimal value of K is approximately 72. (Increasing K did not result in a decrease in accuracy, but significantly increased the training time required)
 3) STRIDE 2 is the best
 4) Increasing XGBoost depth can improve accuracy although training takes ungodly amounts of time
-
 
 
 Explanations for the results table:
