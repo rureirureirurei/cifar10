@@ -8,6 +8,11 @@ Main notebook is nn.ipynb.
 
 Right now it's a real mess, I might tidy things up later.
 
+# TODO
+- hyperparameters tuner
+- rewrite to torch
+- metafeatures extractions (as it was described in the original paper)
+
 Table with results
 
 | Model | Accuracy |
